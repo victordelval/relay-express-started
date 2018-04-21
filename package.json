@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/victordelval/relay-express-started/issues"
   },
-  "homepage": "https://github.com/victordelval/relay-express-started#readme"
+  "homepage": "https://github.com/victordelval/relay-express-started#readme",
+  "dependencies": {
+    "graphql": "^0.13.2"
+  }
 }
