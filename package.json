@@ -1,0 +1,26 @@
+{
+  "name": "relay-express-started",
+  "version": "1.0.0",
+  "description": "React-Node.js app using Relay, GraphQL and Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victordelval/relay-express-started.git"
+  },
+  "keywords": [
+    "React",
+    "Relay",
+    "GraphQL",
+    "Node.js",
+    "Express"
+  ],
+  "author": "Victor del Val",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victordelval/relay-express-started/issues"
+  },
+  "homepage": "https://github.com/victordelval/relay-express-started#readme"
+}
