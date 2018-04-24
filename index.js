@@ -1,11 +1,11 @@
 const { MongoClient } = require('mongodb');
-
+const assert = require('assert');
+const graphqlHTTP = require('express-graphql');
 const express = require('express');
 
-const { graphql } = require('graphql');
-const graphqlHTTP = require('express-graphql');
 
-const assert = require('assert');
+const { graphql } = require('graphql');
+
 
 const mySchema = require('./schema/main');
 

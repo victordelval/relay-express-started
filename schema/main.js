@@ -3,47 +3,39 @@ const {
     GraphQLObjectType,
     GraphQLString,
     GraphQLInt,
-    GraphQLList
+    GraphQLList,
+    GraphQLBoolean,
+    GraphQLEnumType
 } = require('graphql');
 
-const roll = () => Math.floor(6 * Math.random()) + 1;
+const QuoteType = new GraphQLObjectType({
+    name: 'Quote',
+    fields: {
+        id : {
+            type: GraphQLString,
+            resolve: obj => obj._id
+        },
+        text: { type: GraphQLString },
+        author: { type: GraphQLString }
+    }
+});
 
 const queryType = new GraphQLObjectType({
     name: 'RootQuery',
     fields: {
-        hello: {
-            type: GraphQLString,
-            resolve: () => 'world!'
-        },
-        diceRoll: {
-            type: new GraphQLList(GraphQLInt),
-            args: {
-                count: {
-                    type: GraphQLInt,
-                    defaultValue: 2
-                }
-            },
-            // resolve: () => [roll(), roll()]
-            resolve: (_, args) => {
-                let rolls = [];
-                for (let i = 0; i < args.count; i++) {
-                    rolls.push(roll());
-                }
-                return rolls;
-            }
-        },
-        usersCount: {
-            type: GraphQLInt,
+        allQuotes: {
+            type: new GraphQLList(QuoteType),
+            description: 'A list of the quotes in the database',
             resolve: (_, args, { db }) => {
                 var dbo = db.db('test')
-                return dbo.collection('users').count()
+                return dbo.collection('quotes').find().toArray()
+                // db.collection('quotes').find().toArray()
             }
         }
     }
 });
 
 const mySchema = new GraphQLSchema({
-    // root query & root mutation definitions
     query: queryType
 });
 
