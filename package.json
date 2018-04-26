@@ -2,10 +2,6 @@
   "name": "relay-express-started",
   "version": "1.0.0",
   "description": "React-Node.js app using Relay, GraphQL and Express",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/victordelval/relay-express-started.git"
@@ -35,5 +31,14 @@
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "webpack": "^4.6.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^2.0.15"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "webpack": "webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
